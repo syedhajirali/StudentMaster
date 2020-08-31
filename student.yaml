@@ -20,3 +20,21 @@ spec:
       name: student
 
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: student
+  name: student
+  namespace: default
+spec:
+  ports:
+  - nodePort: 35000
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: student
+  sessionAffinity: None
+  type: NodePort
