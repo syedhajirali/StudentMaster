@@ -10,7 +10,7 @@ pipeline {
   
     stage('Checkout Source') {
       steps {
-        git clone 'https://github.com/syedhajirali/studentmaster.git'
+        git 'https://github.com/syedhajirali/studentmaster.git'
       }
     }
 
