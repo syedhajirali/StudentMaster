@@ -2,38 +2,38 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: frontend
-    run: frontend
-  name: frontend
+    app: student
+    run: student
+  name: student
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: student
   template:
    metadata:
     labels:
-      app: frontend
+      app: student
    spec:
     containers:
     - image: 10.128.0.12:5000/syedhajirali/studentmaster:${BUILD_NUMBER}
-      name: frontend
+      name: student
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: frontend
-  name: frontend
+    app: student
+  name: student
   namespace: default
 spec:
   ports:
-  - nodePort: 32333
+  - nodePort: 35000
     port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    app: frontend
+    app: student
   sessionAffinity: None
   type: NodePort
