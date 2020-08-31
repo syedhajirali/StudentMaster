@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "10.128.0.12:5000/syedhajirali/studentmaster"   
+    registry = "10.128.0.12:5000/syedhajirali/studentmaster/src"   
     dockerImage = ""
   }
 
@@ -10,7 +10,7 @@ pipeline {
   
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/syedhajirali/studentmaster.git'
+        git clone 'https://github.com/syedhajirali/studentmaster.git'
       }
     }
 
