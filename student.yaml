@@ -30,7 +30,7 @@ metadata:
   namespace: default
 spec:
   ports:
-  - nodePort: 35000
+  - nodePort: 31000
     port: 8888
     protocol: TCP
     targetPort: 8888
