@@ -1,11 +1,11 @@
 pipeline {
 
   environment {
-    #registry = "10.128.0.12:5000/syedhajirali/studentmaster"   
+   
    registry= syed.mj@gmail.com/https://github.com/syedhajirali
      registryCredential = 'syedmj'
 
-   #registry_mysql = "10.128.0.12:5000/syedhajirali/mysql"
+  
     dockerImage = ""
   }
 
@@ -31,8 +31,8 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-        #  docker.withRegistry( "" ) {
-            #dockerImage.push()
+      
+        
             docker.withRegistry( '', registryCredential ) {
         dockerImage.push()
           }
