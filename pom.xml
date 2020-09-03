@@ -11,7 +11,7 @@
 	<groupId>com.student</groupId>
 	<artifactId>StudentMaster</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>StudentMaster</name>
+	<name>studentmaster</name>
 	<description>StudentMaster</description>
 
 	<properties>
