@@ -2,7 +2,7 @@ pipeline {
 
   environment {
    
-   registry= syed.mj@gmail.com/https://github.com/syedhajirali
+   registry= "syed.mj@gmail.com/https://github.com/syedhajirali
      registryCredential = 'syedmj'
 
   
