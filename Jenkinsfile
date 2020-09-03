@@ -2,7 +2,7 @@ pipeline {
 
   environment {
    
-   registry= "syedmj/https://hub.docker.com/repository/docker/syedmj/v2"
+   registry= "syedmj/https://hub.docker.com/repository/docker/syedmj/test"
      registryCredential = 'syed.mj@gmail.com'
 
   
