@@ -2,6 +2,7 @@ pipeline {
 
   environment {
     registry = "10.128.0.12:5000/syedhajirali/studentmaster"   
+    registry_mysql = "10.128.0.12:5000/syedhajirali/mysql"
     dockerImage = ""
   }
 
