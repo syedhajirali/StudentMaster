@@ -2,7 +2,7 @@ pipeline {
 
   environment {
    
-     registry = "10.128.0.12:5000/syedhajirali/flask"     
+     registry = "10.128.0.12:5000/syedhajirali"     
      dockerImage = ""
   }
 
