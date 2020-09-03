@@ -15,20 +15,19 @@ pipeline {
       }
     }
 
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
+   
+      stage('Build') {
+            sh 'mvn clean install'
+
+            def pom = readMavenPom file:'pom.xml'
+            print pom.version
+            env.version = pom.version
         }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
-    } 
       
     stage('Build image') {
       steps{
         script {
+           def app = docker.build "10.128.0.12:5000/studentmaster:${env.version}"
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
