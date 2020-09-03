@@ -2,8 +2,8 @@ pipeline {
 
   environment {
    
-   registry= "syed.mj@gmail.com/https://github.com/syedhajirali
-     registryCredential = 'syedmj'
+   registry= "syedmj/https://hub.docker.com/repository/docker/syedmj/v2
+     registryCredential = 'syed.mj@gmail.com'
 
   
     dockerImage = ""
