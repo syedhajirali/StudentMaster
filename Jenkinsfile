@@ -2,11 +2,8 @@ pipeline {
 
   environment {
    
-   registry= "syedmj/https://github.com/syedhajirali/studentmaster"
-     registryCredential = 'syed.mj@gmail.com'
-
-  
-    dockerImage = ""
+     registry = "10.128.0.12:5000/syedhajirali/flask"     
+     dockerImage = ""
   }
 
   agent any
@@ -18,7 +15,16 @@ pipeline {
       }
     }
 
-   
+    stage('Maven Install') {
+      agent {
+        docker {
+          image 'maven:3.5.0'
+        }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    } 
       
     stage('Build image') {
       steps{
@@ -31,10 +37,8 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-      
-        
-            docker.withRegistry( '', registryCredential ) {
-        dockerImage.push()
+          docker.withRegistry( "" ) {
+            dockerImage.push()
           }
         }
       }
