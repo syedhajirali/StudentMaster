@@ -15,14 +15,20 @@ pipeline {
       }
     }
 
-   
-      stage('Build') {
-            sh 'mvn clean install'
-
-            def pom = readMavenPom file:'pom.xml'
+     
+ stage('Maven Install') {
+      agent {
+        docker {
+          image 'maven:3.5.0'
+        }
+      }
+      steps {
+        sh 'mvn clean install'
+        def pom = readMavenPom file:'pom.xml'
             print pom.version
             env.version = pom.version
-        }
+      }
+    } 
       
     stage('Build image') {
       steps{
