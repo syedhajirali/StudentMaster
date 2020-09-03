@@ -1,5 +1,8 @@
 FROM openjdk:8
-ADD target/studentmaster-0.0.1-SNAPSHOT.jar studentmaster-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /studentmaster-0.0.1-SNAPSHOT.jar"]
+VOLUME /tmp
+WORKDIR /
+ADD target/studentmaster.jar studentmaster.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/studentmaster.jar"]
 
-EXPOSE 3333
+
