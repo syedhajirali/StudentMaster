@@ -17,7 +17,7 @@ spec:
    spec:
     containers:
     - image: 10.128.0.12:5000/syedhajirali/studentmaster:${BUILD_NUMBER}
-      #imagePullPolicy: Never
+      imagePullPolicy: IfNotPresent
       name: student
 
 
