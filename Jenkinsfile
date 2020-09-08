@@ -31,6 +31,7 @@ pipeline {
         script {
           docker.withRegistry( "" ) {
               echo 'Pushing to Local Registry'
+             sh 'docker push registry + ":$BUILD_NUMBER"
               dockerImage.push()
               echo 'Pushing to Local Registry Success'
           }
