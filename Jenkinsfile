@@ -21,7 +21,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-           sh 'docker build -t "10.128.0.12:5000/syedhajirali/studentmaster+ ":$BUILD_NUMBER"  
+           sh 'docker build -t "10.128.0.12:5000/syedhajirali/studentmaster"  
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
