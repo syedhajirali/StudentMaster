@@ -41,7 +41,9 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
+           echo 'Pulling image from Local Registry'
           kubernetesDeploy(configs: "student.yaml", kubeconfigId: "mykubeconfig")
+             echo 'Pulling image from Local Registry Success'
         }
       }
     }
